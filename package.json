@@ -1,0 +1,43 @@
+{
+  "name": "frontend-npm-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for frontend projects using NPM as build tool",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist/{css/*,js/*,images/*}",
+    "htmlmin:dist": "htmlmin -cs dist/index.html index.html",
+    "compile": "node-sass src/scss/main.scss dist/css/style.comp.css",
+    "prefix": "postcss -u autoprefixer --autoprefixer.browsers \"&gt; 5%, ie 9\" -r dist/css/style.comp.css -o dist/css/style.prefix.css",
+    "compress": "node-sass dist/css/style.prefix.css dist/css/style.css --output-style compressed",
+    "watch:scss": "node-sass src/scss/main.scss src/css/style.css -w",
+    "serve": "live-server",
+    "start": "run-p watch:scss serve",
+    "build:html": "npm run htmlmin:dist",
+    "build:css": "npm-run-all compile prefix compress",
+    "build:js": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -o dist/js/script.js && uglifyjs src/js/*.js -m -c -o dist/js/script.min.js",
+    "build:images": "imagemin src/images/* -o dist/images",
+    "prod": "run-s build:html build:css build:js build:images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shovanch/frontend-npm-boilerplate.git"
+  },
+  "author": "Shovan Chatterjee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shovanch/frontend-npm-boilerplate/issues"
+  },
+  "homepage": "https://github.com/shovanch/frontend-npm-boilerplate#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "concat": "^1.0.3",
+    "htmlmin": "0.0.7",
+    "imagemin-cli": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^4.1.1",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.1.9"
+  }
+}
