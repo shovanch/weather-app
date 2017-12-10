@@ -2,41 +2,23 @@ const key = 'eddb9c8514a8cfd0d2abf61e4df288ac';
 const weatherBox = document.getElementsByClassName('weather-box')[0];
 const tempBox = document.getElementsByClassName('weather-box__temp')[0];
 
-// temp.addEventListener('click', getPosition);
-// temp.addEventListener('click', hideIt);
-
-// function getPosition() {
-//   alert('click');
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(getWeatherInfo)
-//   } else {
-//     error.innerHTML = "Sorry Position not found.";
-//   }
-// }
-
-// function hideIt() {
-//   this.style.display = 'none';
-// }
-
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(getWeatherInfo)
+  navigator.geolocation.getCurrentPosition(getWeatherInfo);
 } else {
-  weatherBox.innerHTML = "Sorry Position not found.";
+  weatherBox.innerHTML = 'Sorry Position not found.';
 }
 
-function getWeatherInfo(position) {
-  console.log('Request Sent')
+function getWeatherInfo (position) {
+  console.log('Request Sent');
   console.log(position);
-  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${key}`
+  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${key}`;
 
   var request = new XMLHttpRequest();
-  request.open('GET', url , true);
+  request.open('GET', url, true);
   request.onload = function () {
-
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
-
       const location = document.createElement('h1');
       location.setAttribute('class', 'weather-box__location');
       location.textContent = data.name;
@@ -58,16 +40,16 @@ function getWeatherInfo(position) {
 
       // If we are in the range of the icon class IDs, add day/night depending on time
       if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-        var time = "";
+        var time = '';
         var today = new Date();
         var hour = today.getHours();
 
         if (hour > 6 && hour < 20) {
-          //Day time
-          time = "day-";
+          // Day time
+          time = 'day-';
         } else {
-          //Night time
-          time = "night-";
+          // Night time
+          time = 'night-';
         }
       }
 
@@ -85,9 +67,7 @@ function getWeatherInfo(position) {
 
       tempBox.appendChild(tempNum);
       tempBox.appendChild(tempIcon);
-
     }
-  }
+  };
   request.send();
 }
-

@@ -41,6 +41,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 35rem;
+  min-width: 20rem;
   min-width: auto; }
   .weather-box__location {
     text-align: center;
