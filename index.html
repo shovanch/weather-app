@@ -5,13 +5,29 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=stylesheet href="src/css/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500" rel="stylesheet">
     <!-- User stylesheets -->
+    <link rel="stylesheet"  href="src/css/weather-icons.min.css">
     <link rel=stylesheet href="src/css/style.css">
 
-    <title>Document</title>
+    <title>Weather App</title>
 </head>
 <body>
-    <h1>Hello Beautiful World</h1>
+    <div class="container">
+        <div class="weather-container">
+            <h1 class="heading">Weather Now</h1>
+
+            <div class="weather-box">
+                <!-- <h1 class="weather-box__location">Kolkata</h1>
+                <i class="weather-box__icon wi wi-night-sleet"></i>
+                <h2 class="weather-box__description">Sprinkle</h2> -->
+                <h3 class="weather-box__temp"> <!-- <span class="weather-box__temp-num">21</span><i class="weather-box__temp-icon wi wi-celsius"></i> --> </h3>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="src/js/icondata.js"></script>
     <script src="src/js/script.js"></script>
 </body>
 </html>

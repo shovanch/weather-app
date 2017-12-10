@@ -1,0 +1,48 @@
+.heading {
+  margin-top: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.weather-box {
+  padding: 5rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 35rem;
+  min-width: auto;
+
+  &__location {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  &__icon {
+    font-size: 7rem;
+    color: #4f4f4f;
+    display: block;
+  }
+
+  &__description {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  &__temp {
+  }
+
+  &__temp-num {
+    font-size: 5rem;
+    display: inline-block;
+  }
+
+  &__temp-icon {
+    font-size: 5.5rem;
+    color: #4f4f4f;
+    display: inline-block;
+  }
+}

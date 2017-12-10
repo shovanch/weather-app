@@ -1,2 +1,64 @@
-h1 {
-  color: red; }
+/* -- Variables --- */
+/* -- Base Styles  ---------- */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ff7171; }
+
+.weather-container {
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  box-shadow: 0 2rem 4rem rgba(51, 51, 51, 0.64); }
+
+.heading {
+  margin-top: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem; }
+
+.weather-box {
+  padding: 5rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 35rem;
+  min-width: auto; }
+  .weather-box__location {
+    text-align: center;
+    font-size: 3rem; }
+  .weather-box__icon {
+    font-size: 7rem;
+    color: #4f4f4f;
+    display: block; }
+  .weather-box__description {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2rem; }
+  .weather-box__temp-num {
+    font-size: 5rem;
+    display: inline-block; }
+  .weather-box__temp-icon {
+    font-size: 5.5rem;
+    color: #4f4f4f;
+    display: inline-block; }
