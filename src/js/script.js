@@ -11,7 +11,7 @@ if (navigator.geolocation) {
 function getWeatherInfo (position) {
   console.log('Request Sent');
   console.log(position);
-  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${key}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${key}`;
 
   var request = new XMLHttpRequest();
   request.open('GET', url, true);
