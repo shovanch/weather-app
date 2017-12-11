@@ -19,6 +19,7 @@ function getWeatherInfo (position) {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
+      console.log(data);
       const location = document.createElement('h1');
       location.setAttribute('class', 'weather-box__location');
       location.textContent = data.name;
@@ -39,12 +40,14 @@ function getWeatherInfo (position) {
       let icon = weatherIcons[code].icon;
 
       // If we are in the range of the icon class IDs, add day/night depending on time
+      let time = '';
       if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-        var time = '';
-        var today = new Date();
-        var hour = today.getHours();
+        const today = new Date();
+        const hour = today.getHours();
 
-        if (hour > 6 && hour < 20) {
+        console.log(hour);
+
+        if (hour > 6 && hour < 18) {
           // Day time
           time = 'day-';
         } else {
@@ -52,6 +55,7 @@ function getWeatherInfo (position) {
           time = 'night-';
         }
       }
+      console.log(time);
 
       // Finally tack on the prefix + time-of-day + weaherID
       icon = prefix + time + icon;

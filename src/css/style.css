@@ -40,14 +40,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 35rem;
-  min-width: 20rem;
-  min-width: auto; }
+  min-height: 45rem;
+  min-width: 30rem; }
   .weather-box__location {
     text-align: center;
-    font-size: 3rem; }
+    font-size: 3rem;
+    margin-bottom: 3rem; }
   .weather-box__icon {
-    font-size: 7rem;
+    font-size: 9rem;
     color: #4f4f4f;
     display: block; }
   .weather-box__description {
